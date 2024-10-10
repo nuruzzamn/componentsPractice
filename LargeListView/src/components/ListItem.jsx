@@ -4,7 +4,7 @@ import React from "react";
 
 const ListItem = ({ user }) => {
   return (
-    <div className="flex p-4 bg-blue-100 shadow-lg rounded-lg mb-4">
+    <div className="flex p-4 bg-blue-100 shadow-lg rounded-lg mb-[100px]">
       <img
         src={user.image}
         alt={user.name}
