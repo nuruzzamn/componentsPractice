@@ -2,15 +2,21 @@ const summaryData = [
   {
     summary:
       "Tech companies have reported strong quarterly earnings, exceeding expectations, as the global shift towards remote work and digital services continues to fuel demand across industries.",
+    date: "2024-10-10",
+    author: "John Smith",
   },
   {
     summary:
       "The international community is closely monitoring tensions in the Middle East, where recent peace talks have stalled amid growing concerns over resource allocation and regional security threats. have stalled amid growing concerns over resource allocation and regional security threats. The tourism sector is starting to rebound after a long period of stagnation, with travel restrictions easing and a rise in domestic travel providing have stalled amid growing concerns over resource allocation and regional security threats.. The tourism sector is starting to rebound after a long period of stagnation, with travel restrictions easing and a rise in domestic travel providing have stalled amid growing concerns over resource allocation and regional security threats.. The tourism sector is starting to rebound after a long period of stagnation, with travel restrictions easing and a rise in domestic travel providing have stalled amid growing concerns over resource allocation and regional security threats..The tourism sector is starting to rebound after a long period of stagnation, with travel restrictions easing and a rise in domestic travel providing have stalled amid growing concerns over resource allocation and regional security threats..",
+    date: "2024-10-10",
+    author: "John Smith",
   },
 
   {
     summary:
       "Climate change activists are rallying for stronger environmental regulations after a series of devastating floods, wildfires, and hurricanes left many communities struggling to rebuild.have stalled amid growing concerns over resource allocation and regional security threats. have stalled amid growing concerns over resource allocation and regional security threats.",
+    date: "2024-10-10",
+    author: "John Smith",
   },
 
   {

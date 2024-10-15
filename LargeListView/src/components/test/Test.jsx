@@ -7,36 +7,11 @@ import React, {
 } from "react";
 import { VariableSizeList as List } from "react-window";
 import { useWindowResize } from "./useWindowResize";
-import summaryData from "../../db/testSummaryData";
+// import summaryData from "../../db/testSummaryData";
+import summaryData from "../../db/newsDB";
 import { TestDataList } from "./TestDataList";
-
-// Utility to calculate the height of each item dynamically
-const getMessageHeight = (text, width) => {
-  const lineHeight = 20; // Adjust this based on your styling
-  const baseHeight = 30; // Base height for padding
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d");
-  context.font = "100px Arial"; // Your message font style
-  const words = text.split(" ");
-
-  let line = "";
-  let lines = 1;
-
-  words.forEach((word) => {
-    const testLine = line + word + " ";
-    const metrics = context.measureText(testLine);
-    const testWidth = metrics.width;
-
-    if (testWidth > width && line) {
-      line = word + " ";
-      lines++;
-    } else {
-      line = testLine;
-    }
-  });
-
-  return baseHeight + lines * lineHeight;
-};
+import NewsItemView from "../news/NewsItemView";
+import NewsTest from "./NewsTest";
 
 const Row = ({ data, index, setSize, windowWidth }) => {
   const rowRef = useRef();
@@ -46,16 +21,12 @@ const Row = ({ data, index, setSize, windowWidth }) => {
   }, [setSize, index, windowWidth]);
 
   return (
-    <div
-      ref={rowRef}
-      style={{
-        padding: "1em",
-        borderBottom: "1px solid #ccc",
-        // backgroundColor: "red",
-        boxSizing: "border-box",
-      }}
-    >
-      <TestDataList summaryData={data[index].summary} />
+    <div ref={rowRef} className="flex justify-center px-8  box-border">
+      <NewsTest news={data[index]} />
+      {/* <TestDataList summaryData={data[index].summary} /> */}
+      {/* <TestDataList summaryData={data[index]} /> */}
+      <hr className="border-t-2 border-gray-300 my-4" />
+
       {/* {data[index].summary} */}
     </div>
   );
@@ -79,7 +50,7 @@ export const Test = () => {
   const data = useMemo(() => summaryData, []);
 
   return (
-    <div style={{ width: "100%", padding: "" }}>
+    <div className="w-full">
       <h1 className="text-2xl my-4 font-bold text-center">
         {" "}
         Total data : {summaryData.length}
@@ -87,6 +58,7 @@ export const Test = () => {
 
       <List
         ref={listRef}
+        className="no-scrollbar"
         height={600} // List window height
         width={windowWidth} // Dynamic width based on window
         itemCount={data.length}
@@ -94,7 +66,7 @@ export const Test = () => {
         itemData={data} // Data passed to each item
       >
         {({ index, style, data }) => (
-          <div style={style}>
+          <div style={style} className="overflow-hidden">
             <Row
               data={data}
               index={index}
